@@ -7,9 +7,17 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
 </head>
+<div class="social-icons">
+  <a href="https://www.linkedin.com/in/midhuns1/" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <a href="https://x.com/S___Midhun" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="https://www.instagram.com/zyco_yt" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://github.com/Midhun-1-2" target="_blank"><i class="fab fa-github"></i></a>
+</div>
+
 <body>
 
 <header>
@@ -137,15 +145,7 @@
     document.querySelectorAll('.zoom-element').forEach(el => observer.observe(el));
   });
 </script>
- {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    <ul class="flashes">
-      {% for category, message in messages %}
-        <li class="{{ category }}">{{ message }}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}
+
 
 
 </html>

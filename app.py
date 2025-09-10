@@ -86,7 +86,7 @@ def contact1():
     except Exception as e:
         print(f"Error sending email: {e}")
         flash("Something went wrong. Please try again later.", "danger")
-    return redirect(url_for("home", error=1))
+        return redirect(url_for("home", error=1))
 
 
 
