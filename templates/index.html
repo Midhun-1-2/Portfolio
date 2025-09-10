@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - S MIDHUN</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Your Photo" />
+    <span>S MIDHUN</span>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Home Section -->
+<section id="home">
+  <h1>Hey, I'm S MIDHUN</h1>
+  <p>A Result-Oriented Web Developer building and managing Websites and Web Applications that lead to the success of the overall product.</p>
+    <br>
+  <button onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">Projects</button>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a 2023 B-Tech graduate passionate about software development, AI, and continuous upskilling. I love coding and building efficient, scalable applications.
+  </p>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project-list">
+    <div class="project-card">
+      <h3>Personal Portfolio Website</h3>
+      <p>A fully responsive portfolio site built with Flask and modern CSS.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>AI Chatbot</h3>
+      <p>An AI-powered chatbot using Python and machine learning.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>DSA Practice Tracker</h3>
+      <p>A tool to track daily problem-solving progress and performance.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form method="POST" action="/contact">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<script>
+  // Active nav link switching on scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav ul li a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').substring(1) === current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
