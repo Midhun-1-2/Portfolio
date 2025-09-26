@@ -97,6 +97,84 @@
     nav ul li a.active {
       color: #6b42f5;
     }
+/* Skills Section */
+#skills {
+  padding: 60px 20px;
+   /* same as projects for consistency */
+  text-align: center;
+}
+
+#skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.skills-container {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.skill-card {
+  border: 2px solid #00bfbf; /* same cyan color as theme */
+  border-radius: 10px;
+  padding: 20px;
+
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-card i,
+.skill-card img {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .skill-card {
+    padding: 15px;
+  }
+  .skill-card i {
+    font-size: 2.5rem;
+  }
+  .skill-card p {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .skills-container {
+    gap: 15px;
+  }
+  .skill i {
+    font-size: 3rem;
+  }
+}
+
 
     /* Hero Section */
     section#home {
