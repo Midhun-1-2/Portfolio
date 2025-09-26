@@ -27,16 +27,22 @@
     <img src="{{ url_for('static', filename='13.jpeg') }}" alt="Your Photo" />
     <span>S MIDHUN</span>
   </div>
-
+ <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
   <nav>
-    <ul>
+
+    <ul id="nav-links">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
   </nav>
+
 </header>
+
 
 <!-- Home Section -->
 <section id="home">
@@ -81,8 +87,8 @@
       <p>MySQL</p>
     </div>
     <div class="skill-card"data-aos="zoom-in">
-      <i class="devicon-git-plain colored"></i>
-      <p>Git</p>
+      <i class="devicon-github-plain colored"></i>
+      <p>Git-hub</p>
     </div>
     <div class="skill-card "data-aos="zoom-out">
       <i class="fas fa-brain"></i>
@@ -159,6 +165,20 @@
 </script>
 
 </body>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+});
+</script>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
