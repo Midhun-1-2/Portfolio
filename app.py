@@ -4,44 +4,6 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# Projects data - add your own projects here
-projects = [
-    {
-        "title": "Personal Portfolio Website",
-        "description": "A fully responsive portfolio site built with Flask and modern CSS.",
-        "link": "#"
-    },
-    {
-        "title": "AI Chatbot",
-        "description": "An AI-powered chatbot using Python and machine learning.",
-        "link": "#"
-    },
-    {
-        "title": "DSA Practice Tracker",
-        "description": "A tool to track daily problem-solving progress and performance.",
-        "link": "#"
-    }
-]
-
-# Blog posts data
-posts = [
-    {
-        "id": 1,
-        "title": "My Journey into Software Development After Graduation",
-        "content": "Graduating in 2023 with a B.Tech degree, I began a focused journey into full-stack web development and problem-solving..."
-    },
-    {
-        "id": 2,
-        "title": "How AI is Reshaping Software Development",
-        "content": "Artificial Intelligence isn’t just for research labs anymore. It’s impacting how we write code and build systems..."
-    },
-    {
-        "id": 3,
-        "title": "Top 5 Platforms I Use to Upskill as a Developer",
-        "content": "As a tech enthusiast, I’m always learning. These are the platforms I rely on for continuous upskilling..."
-    }
-]
-app.secret_key = "your_secret_key"  # For flash messages
 
 # Flask-Mail Configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -56,12 +18,12 @@ mail = Mail(app)
 def home():
     current_year = datetime.now().year
     # Passing first 3 blog posts as preview on home page
-    return render_template("index.html", projects=projects, posts=posts, current_year=current_year)
+    return render_template("index.html")
 
 @app.route("/blog")
 def blog():
     # Full blog listing page
-    return render_template("blog.html", posts=posts)
+    return render_template("blog.html")
 
 
 
