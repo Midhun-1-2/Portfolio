@@ -9,7 +9,8 @@ app = Flask(__name__)
 app.secret_key = "midhun@123"
 
 
-
+app.config['MAIL_USERNAME'] = os.getenv('kk8004419@gmail.com')
+app.config['MAIL_PASSWORD'] = os.getenv('pcjv stvs tveu urcb')
 
 # Flask-Mail Configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -32,29 +33,6 @@ def blog():
     return render_template("blog.html")
 
 
-
-@app.route("/contact1", methods=["POST"])
-def contact1():
-    name = request.form["name"]
-    email = request.form["email"]
-    message = request.form["message"]
-
-    # Compose email
-    msg = Message(
-        subject=f"New Contact Form Submission from {name}",
-        sender=email,
-        recipients=["kk8004419@gmail.com"],  # Your receiving email
-        body=f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
-    )
-
-    try:
-        mail.send(msg)
-        flash("Message sent successfully!", "success")
-        return redirect(url_for("home", success=1))
-    except Exception as e:
-        print(f"Error sending email: {e}")
-        flash("Something went wrong. Please try again later.", "danger")
-        return redirect(url_for("home", error=1))
 
 
 
