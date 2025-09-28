@@ -391,10 +391,10 @@ section h2 {
   }
 
   nav ul {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
-    width: 100%;
-    margin-top: 10px;
+    width: 38%;
+    margin-top: -41px;
   }
 
   section#home h1 {
