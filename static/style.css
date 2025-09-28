@@ -402,9 +402,9 @@ section h2 {
   }
 
   .social-icons {
-    left: 10px;
+    left: auto;
     top: auto;
-    bottom: 20px;
+    bottom: -6px;
     flex-direction: row;
     justify-content: center;
     width: 100%;

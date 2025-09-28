@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for , flash
-from flask_mail import Mail, Message
+from flask import Flask, render_template
+from flask_mail import Mail
 from datetime import datetime
 
 
@@ -16,10 +16,7 @@ def home():
     # Passing first 3 blog posts as preview on home page
     return render_template("index.html")
 
-@app.route("/blog")
-def blog():
-    # Full blog listing page
-    return render_template("blog.html")
+
 
 
 
