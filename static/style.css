@@ -393,8 +393,11 @@ section h2 {
   nav ul {
     flex-direction: row;
     gap: 10px;
-    width: 38%;
-    margin-top: -41px;
+    width: auto;
+      margin-top: 17px;
+      position: fixed;
+      margin-right: 9px;
+
   }
 
   section#home h1 {
